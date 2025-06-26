@@ -1,0 +1,26 @@
+
+├── class-four/
+│   ├── 1-control-flow.md          (if-else, switch, ternary)
+│   ├── 2-loops.md                 (for, while, do-while, break/continue)
+│   ├── 3-objects-arrays.md        (properties, iteration, differences)
+│   └── exercises/
+│       ├── switch-days.js
+│       └── find-evens.js
+├── class-five/
+│   ├── 1-functions.md             (declarations, arrow, default/rest)
+│   ├── 2-array-methods.md         (map/filter/reduce, some/every)
+│   ├── 3-modules.md               (ES6 vs CommonJS, exports)
+│   ├── 4-express-basics.md        (intro, structure, routes)
+│   └── exercises/
+│       ├── rest-average.js
+│       ├── array-chain.js
+│       └── simple-express.js
+└── class-six/
+    ├── 1-server-architecture.md   (middleware, HTTP methods)
+    ├── 2-routing-controllers.md   (separation, organization)
+    ├── 3-error-handling.md        (middleware, catchAsync)
+    ├── 4-security.md              (best practices)
+    └── exercises/
+        ├── middleware-app.js
+        ├── crud-api.js
+        └── error-handling.js
