@@ -1,0 +1,87 @@
+## Control Flow Understanding
+
+### 1. if-else vs switch statements
+**if-else**: 
+- Evaluates conditions sequentially until a true condition is found
+- Can handle complex conditions with logical operators (&&, ||)
+- More flexible for range checks or non-discrete values
+
+**switch**: 
+- Evaluates a single expression against multiple possible values
+- Uses strict equality (===) for comparisons
+- More readable for multiple discrete value checks
+
+**When to use each**:
+- Use `if-else` for complex conditions or range checks
+- Use `switch` when checking a single variable against multiple exact values
+
+### 2. Ternary operator
+The ternary operator (`condition ? expr1 : expr2`) is a concise way to write simple if-else statements in a single line.
+
+**Differences from if-else**:
+- Can only handle simple true/false conditions
+- Returns a value (can be used in assignments)
+- More compact but potentially less readable for complex logic
+
+## Loop Structures
+
+### 1. Loop comparison
+**for loop**:
+- Best when number of iterations is known
+- Has initialization, condition, and increment in one place
+
+**while loop**:
+- Best when number of iterations is unknown
+- Only has a condition
+- May never execute if condition is false initially
+
+**do-while loop**:
+- Similar to while but guarantees at least one execution
+- Condition is checked after the loop body
+
+### 2. break and continue
+- `break`: Immediately exits the entire loop
+- `continue`: Skips the current iteration and moves to the next one
+
+### 3. for...in vs for...of
+**for...in**:
+- Iterates over enumerable property names of an object
+- Best for object properties (keys)
+- May iterate over prototype chain properties if not careful
+
+**for...of**:
+- Iterates over values of iterable objects (arrays, strings, etc.)
+- Best for array values
+- Doesn't work with regular objects (unless they're iterable)
+
+## Loop Structures
+
+### 1. Loop comparison
+**for loop**:
+- Best when number of iterations is known
+- Has initialization, condition, and increment in one place
+
+**while loop**:
+- Best when number of iterations is unknown
+- Only has a condition
+- May never execute if condition is false initially
+
+**do-while loop**:
+- Similar to while but guarantees at least one execution
+- Condition is checked after the loop body
+
+### 2. break and continue
+- `break`: Immediately exits the entire loop
+- `continue`: Skips the current iteration and moves to the next one
+
+### 3. for...in vs for...of
+**for...in**:
+- Iterates over enumerable property names of an object
+- Best for object properties (keys)
+- May iterate over prototype chain properties if not careful
+
+**for...of**:
+- Iterates over values of iterable objects (arrays, strings, etc.)
+- Best for array values
+- Doesn't work with regular objects (unless they're iterable)
+
