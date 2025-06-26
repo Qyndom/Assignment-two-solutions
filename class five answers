@@ -1,0 +1,132 @@
+## Function Fundamentals
+
+### 1. Function declaration methods
+1. **Function declaration**:
+```javascript
+function add(a, b) { return a + b; }
+```
+- Hoisted (can be called before declaration)
+- Has its own `this` binding
+
+2. **Function expression**:
+```javascript
+const add = function(a, b) { return a + b; };
+```
+- Not hoisted
+- Can be anonymous
+- Has its own `this` binding
+
+3. **Arrow function**:
+```javascript
+const add = (a, b) => a + b;
+```
+- Not hoisted
+- No `this` binding (inherits from parent scope)
+- Concise syntax
+- Implicit return for single expressions
+
+### 2. Default parameters
+Allow parameters to have default values if not provided:
+```javascript
+function greet(name = 'Guest') {
+  return `Hello, ${name}!`;
+}
+```
+
+### 3. Rest parameters
+Collects all remaining arguments into an array:
+```javascript
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+sum(1, 2, 3); // 6
+```
+
+## Array Methods
+
+### 1. forEach vs map vs filter
+- **forEach**: Executes a function for each element (no return value)
+- **map**: Creates new array by transforming each element
+- **filter**: Creates new array with elements that pass a test
+
+**Examples**:
+```javascript
+// forEach - just log each item
+arr.forEach(item => console.log(item));
+
+// map - transform array
+const doubled = arr.map(item => item * 2);
+
+// filter - select items
+const evens = arr.filter(item => item % 2 === 0);
+```
+
+### 2. reduce method
+Reduces array to a single value by applying a function:
+```javascript
+const sum = arr.reduce((total, num) => total + num, 0);
+```
+
+### 3. some() vs every()
+- **some()**: Returns true if at least one element passes the test
+- **every()**: Returns true if all elements pass the test
+
+## Modules and Import/Export
+
+### 1. ES6 vs CommonJS
+**ES6 Modules**:
+- Uses `import/export` syntax
+- Static (imports are hoisted)
+- Supported natively in modern JS
+
+**CommonJS**:
+- Uses `require/module.exports`
+- Dynamic (can be conditional)
+- Used in Node.js
+
+### 2. Export methods
+```javascript
+// Named exports
+export const name = 'value';
+export function func() {}
+
+// Default export
+export default something;
+
+// CommonJS
+exports.name = 'value';
+module.exports = something;
+```
+
+## Express.js Basics
+
+### 1. What is Express.js?
+Express is a minimal, flexible Node.js web application framework that provides:
+- Robust routing
+- Middleware support
+- Simplified HTTP utility methods
+- View system integration
+
+### 2. Basic structure
+```javascript
+const express = require('express');
+const app = express();
+
+// Middleware
+app.use(express.json());
+
+// Routes
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+
+// Start server
+app.listen(3000);
+```
+
+### 3. Simple GET route
+```javascript
+app.get('/api/users', (req, res) => {
+  res.json([{id: 1, name: 'John'}]);
+});
+```
