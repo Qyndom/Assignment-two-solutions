@@ -1,0 +1,75 @@
+# 1. Middleware
+Middleware are functions that have access to the request, response, and next function in the request-response cycle. They can:
+- Execute any code
+- Modify request/response objects
+- End the request-response cycle
+- Call the next middleware
+
+### 2. Common middleware
+- **cors**: Enables Cross-Origin Resource Sharing
+- **helmet**: Sets various HTTP headers for security
+- **compression**: Compresses response bodies
+
+### 3. HTTP methods
+Express handles different methods with corresponding methods:
+```javascript
+app.get('/', handler);
+app.post('/', handler);
+app.put('/', handler);
+app.delete('/', handler);
+```
+
+## Routing and Controllers
+
+### 1. Routing vs Controllers
+- **Routing**: Defines URL endpoints and HTTP methods
+- **Controllers**: Contain the actual logic for handling requests
+
+### 2. Separation benefits
+- Better organization
+- Easier testing
+- More maintainable code
+- Clear separation of concerns
+
+### 3. Route organization
+```javascript
+// routes/users.js
+const router = express.Router();
+router.get('/', userController.getAll);
+module.exports = router;
+
+// app.js
+app.use('/users', require('./routes/users'));
+```
+
+## Error Handling
+
+### 1. Error handling middleware
+Special middleware with 4 parameters:
+```javascript
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ error: 'Something went wrong' });
+});
+```
+
+### 2. catchAsync wrapper
+Wraps async functions to catch errors and pass to error handler:
+```javascript
+const catchAsync = (fn) => {
+  return (req, res, next) => {
+    fn(req, res, next).catch(next);
+  };
+};
+```
+
+### 3. Error responses
+```javascript
+app.get('/error', (req, res, next) => {
+  try {
+    throw new Error('Something failed');
+  } catch (err) {
+    next(err);
+  }
+});
+```
